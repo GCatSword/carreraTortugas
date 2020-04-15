@@ -1,6 +1,7 @@
 import turtle
+import random
 
-class Circuito():
+class Circuit():
     runners = []
     __posStartY = (-30, -10, 10, 30)
     __colorTurtle = ('red', 'blue', 'green', 'orange')
@@ -23,11 +24,24 @@ class Circuito():
             new_turtle.penup()
             new_turtle.setpos(self.__starLine, self.__posStartY[i])
             self.runners.append(new_turtle)
+    
+    def race(self):
+        winner = False
+        while not winner:
+            for turtle in self.runners:
+                advance = random.randint(1, 6)
+                turtle.fd(advance)
+                
+                if turtle.position()[0] >= self.__finishLine:
+                    winner = True
+                    print("The winner is {} turtle".format(turtle.color()[0]))
+                    
         
-        
+    
      
 if __name__ == '__main__':
-    circuito = Circuito(640, 480)
+    circuit = Circuit(640, 480)
+    circuit.race()
 
 
 
