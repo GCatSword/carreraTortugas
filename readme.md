@@ -1,1 +1,1 @@
-#carrera tortugas utilizando objetos
+#carrera tortugas utilizando objetos tipo turtle
